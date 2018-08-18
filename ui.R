@@ -27,7 +27,8 @@ shinyUI(
                 value = 1, 
                 min = 1, 
                 step = 1
-              )
+              ),
+              uiOutput("render_sample_input_1")
             )
           ),
           column(
@@ -42,7 +43,8 @@ shinyUI(
                 value = 1, 
                 min = 1, 
                 step = 1
-              )
+              ),
+              uiOutput("render_sample_input_2")
             )
           ),
           column(
@@ -57,7 +59,8 @@ shinyUI(
                 value = 1, 
                 min = 1, 
                 step = 1
-              )
+              ),
+              uiOutput("render_sample_input_3")
             )
           ),
           column(
@@ -72,7 +75,8 @@ shinyUI(
                 value = 1,
                 min = 1, 
                 step = 1
-              )
+              ),
+              uiOutput("render_sample_input_4")
             )
           )
         )

@@ -125,8 +125,8 @@ shinyServer(
         quarterly_values()$q_lag_2
       )
       
-      oel <- sum(quarterly_values()$current_q * 2, quarterly_values()$q_lag_1,
-                 quarterly_values()$q_lag_2)/4
+      oel <- round(sum(quarterly_values()$current_q * 2, quarterly_values()$q_lag_1,
+                 quarterly_values()$q_lag_2)/4, 2)
       
       return(oel)
      
@@ -141,7 +141,8 @@ shinyServer(
       )
       
       lraa <- mean(c(quarterly_values()$current_q, quarterly_values()$q_lag_1,
-                   quarterly_values()$q_lag_2, quarterly_values()$q_lag_3))
+                   quarterly_values()$q_lag_2, quarterly_values()$q_lag_3)) %>% 
+        round(2)
       
       return(lraa)
     })

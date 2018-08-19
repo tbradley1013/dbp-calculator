@@ -104,12 +104,16 @@ shinyUI(
             )
           )
         ),
-        fluidRow(
-          uiOutput("render_oel_ui")
-        ),
-        fluidRow(
-          uiOutput("render_lraa_ui")
+        div(
+          fluidRow(
+            uiOutput("render_oel_ui")
+          ),
+          fluidRow(
+            uiOutput("render_lraa_ui")
+          ),
+          style = "margin-bottom:50px;"
         )
+        
       )
     )
   )

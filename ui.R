@@ -11,9 +11,33 @@ shinyUI(
     useShinyalert(),
     navbarPage(
       title = "DBP Calculator",
-      theme = shinytheme("united"),
+      theme = shinytheme("cerulean"),
       tabPanel(
+        # shinythemes::themeSelector(),
         title = "Input Data",
+        fluidRow(
+          column(
+            4
+          ),
+          column(
+            4,
+            wellPanel(
+              HTML("<center>"),
+              selectInput(
+                inputId = "input_parameter",
+                label = "Select Parameter",
+                choices = list(
+                  "Total THMs" = "thms",
+                  "5 Haloacetic acids" = "haa5"
+                ),
+                selected = "thms"
+              ),
+              HTML("</center>")
+            )
+          ),
+          column(4)
+          
+        ),
         fluidRow(
           column(
             3, 
@@ -79,6 +103,12 @@ shinyUI(
               uiOutput("render_sample_input_4")
             )
           )
+        ),
+        fluidRow(
+          uiOutput("render_oel_ui")
+        ),
+        fluidRow(
+          uiOutput("render_lraa_ui")
         )
       )
     )
